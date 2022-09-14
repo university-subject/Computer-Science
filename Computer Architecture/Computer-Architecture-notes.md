@@ -16,7 +16,7 @@ collect and note by : JingShing
 
 [1.5 建構處理器與記憶體的技術](#1-5-How-to-build-a-processor-and-a-ram)
 
-1.6 效能
+[1.6 效能](#1-6-Performance)
 
 1.7 功耗障壁
 
@@ -188,6 +188,108 @@ collect and note by : JingShing
 
 ## 1-5 How to build a processor and a ram
 
+* 表格表示過去不同時期所使用的技術，並對每一種技術估計其單位成本的對應效能
+
+| 年度 | 計算機使用的技術                  | 相對的效能∕單位成本 |
+| ---- | --------------------------------- | ------------------- |
+| 1951 | 真空管(vacuum tube)               | 1                   |
+| 1965 | 電晶體                            | 35                  |
+| 1975 | 積體電路                          | 900                 |
+| 1995 | 超大型積體電路                    | 2,400,000           |
+| 2013 | 極大型(Ultra large-scale)積體電路 | 250,000,000,000     |
+
+不同年代計算機中所使用技術的每單位成本的相對效能。
+
+> 資料來源：Computer Museum，美國Boston，而2013 年的數據是由作者依外插的方式得出
+
+* 圖1.11 表示動態隨機記憶體容量自1977年以來的增長
+
+![dram_rising_lines](pictures/dram_rising_lines.png)
+
+​											圖1.11 DRAM 晶片容量隨著時間的成長曲線
+
+y 軸以kbits(210bits)作為單位。DRAM 業界在過去20年來幾乎每三年就將容量提高四倍，也就是每年提升60%。近年來，這個增加速度已經緩慢下來，漸漸變成約略每兩年到三年才將容量加倍
+
+* 圖1.12 表示積體電路製程
+* **！！！重要！！！**
+
+![die-step-flow](pictures/die-step-flow.png)
+
+> Silicon ingot : 矽碇
+>
+> Blank wafers : 空白晶圓
+>
+> Patterned wafers : 光蝕刻後的晶圓
+>
+> Dicer : 切割
+>
+> Dies : 晶粒
+
+圖1.12 晶片的製造過程空白晶圓從矽碇切片下來後，經過20 到40 道步驟後成為作好電路的晶圓(見圖1.13)。之後這些作好電路的晶圓經過晶圓測試機測試以產生良好部分的對照圖。之後晶圓被切割成晶粒(見圖1.9)。本圖中，一片晶圓產出20 個晶粒，其中17 個通過測試(×表示晶粒損壞)。本例中良好晶粒的良率(產出率(良率)，yield)是17/20或85%。這些好的晶粒接著被連結在封裝中並於出貨給顧客之前再作一次測試。在這個最後的測試中又發現一個壞掉的封裝好的零件
+
+### Intel Core i7 Wafer
+
+![i7-wafer](pictures/i7-wafer.png)
+
+* 300mm wafer(12吋), 280 chips, 32nm technology
+* Each chip is 20.7 x 10.5 mm24
+
+### Integrated Circuit Cost
+
+$Cost\;per\;die=\frac{Cost\;per\;die}{Dies\;per\;die\times Yield}$
+
+$Dies\;per\;wafer \approx \frac {Wafer\;area}{Die\;area}$
+
+$Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
+
+* Nonlinear relation to area and defect rate
+  * Wafer cost and area are fixed
+  * Defect rate determined by manufacturing process
+  * Die area determined by architecture and circuit design
+
+## 1-6 Performance
+
+* Response time(反應時間)
+  * How long it takes to do a task
+* Throughput(處理量)
+  * Total work done per unit time
+    * e.g., tasks/transactions/... per hour
+* 個人關心的是降低response time──一件工作由開始至結束的時間，亦稱為執行時間(execution time)
+* 數據中心管理員則常關心處理量(throughput)或頻寬(bandwidth)在給定時間內所完成的工作量
+
+### 處理量與反應時間
+
+以下對計算機系統的改變可否提昇處理量、降低反應時間或兼得？
+
+1. 以較快的處理器置換於計算機中
+2. 在使用多個處理器來分別處理各個工作──例如在全球資訊網中搜尋──的系統中加入額外的處理器
+
+* 降低反應時間幾乎永遠可提升處理量。因此在情況1 中，反應時間及處理量均獲改善。在情況2 中，沒有任何工作可更快完成，故僅處理量有提昇
+* 當情況2 中，處理量需求大增時，可能造成系統將工作需求貯存起來。在這種情況下，由於增加處理量可降低工作需求在貯列中的等待時間，故可同時改善反應時間。
+
+### Relative Performance
+
+* Define Performance = 1/Execution Time
+
+* “X is ntime faster than Y”
+
+  > $Performance_x/Performance_y=Execution\;time_y/Execution\;time_x$
+  >
+  > * Example: time taken to run a program
+  >   * 10s on A, 15s on B
+  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\;Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
+  >     * So A is 1.5 times faster than B
+
+### Measuring Execution Time
+
+* Elapsed time
+  * Total response time, including all aspects
+    * Processing, I/O, OS overhead, idle time
+  * Determines system performance
+* CPU time
+  * Time spent processing a given job
+    * Discounts I/O time, other jobs’ shares
+  * Comprises user CPU time and system CPU time
+  * Different programs are affected differently by CPU and system performance
 
 > 22/9/14
-
