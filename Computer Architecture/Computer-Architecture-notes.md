@@ -10,7 +10,7 @@ collect and note by : JingShing
 
 [1.2 計算機架構中的八大理念](#1-2-Eight-Great-ideas-of-Computer-Architecture)
 
-1.3 你的程式之下
+[1.3 你的程式之下](#1.3-Below-Your-Program)
 
 1.4 覆蓋之下
 
@@ -26,7 +26,7 @@ collect and note by : JingShing
 
 1.10 謬誤與陷阱
 
-### 1-1 Abstraction
+## 1-1 Abstraction
 
 * 計算機抽象化(Abstraction)
   * 以精要的形式來表達計算機的內涵、概念、特質、屬性或意義等，這個從計算機本身找出這個精要的形式的過程就是計算機抽象化。
@@ -120,7 +120,28 @@ collect and note by : JingShing
   | 處理器與記憶體系統            | 決定指令可以被執行得多快                   | 第四、五及六章     |
   | 輸入∕輸出系統(硬體與作業系統) | 決定輸入∕輸出動作可能被執行得多快          | 第四、五及六章     |
 
-  ## 1-2 Eight Great ideas of Computer Architecture
+
+## 1-2 Eight Great ideas of Computer Architecture
+
+1. 配合摩爾定律作設計
+   * 該定律指出：**IC 容量於每18 至24 個月即加倍**
+
+
+2. 用抽象化來簡化設計
+
+   * 一個硬體與軟體的抽象化(abstraction)來代表在不同層次中的設計
+
+   * 在[電腦科學](https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)中，抽象化是將資料與程式，以它的語意來呈現出它的外觀，但是隱藏起它的實作細節。一個電腦系統可以分割成幾個[抽象層](https://zh.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E5%B1%A4)（Abstraction layer），使得程式設計師可以將它們分開處理。
+
+
+3. 使經常的情形變快
+4. 經由平行性提升效能
+5. 經由管道處理(pipelining)提升效能
+6. 經由預測(prediction)提升效能
+7. 記憶體的階層(hierarchy of memories)程式設計師希望記憶體要容量大、速度快且價廉
+8. 經由冗餘(redundancy)提升可靠性
+
+## 1.3 Below Your Program
 
 > 22/9/14
 
