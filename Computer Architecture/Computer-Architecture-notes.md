@@ -6,7 +6,7 @@ collect and note by : JingShing
 
 ## Dialog目錄
 
-[1.1 介紹](#1-1 Abstraction)
+[1.1 介紹](#1-1Abstraction)
 
 [1.2 計算機架構中的八大理念](#1.2 : 8 Great ideas of Computer Architecture)
 
