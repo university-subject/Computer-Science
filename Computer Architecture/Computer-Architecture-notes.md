@@ -14,7 +14,7 @@ collect and note by : JingShing
 
 [1.4 覆蓋之下](#1-4-Under-the-Covers)
 
-[1.5 建構處理器與記憶體的技術](#1.5-How-to-build-a-processor-and-a-ram)
+[1.5 建構處理器與記憶體的技術](#1-5-How-to-build-a-processor-and-a-ram)
 
 1.6 效能
 
@@ -186,7 +186,7 @@ collect and note by : JingShing
 
 圖1.5 表示出五大標準要件的計算機組織處理器由記憶體取得指令與資料。輸入將資料寫入記憶體，而輸出由記憶體讀取資料。控制送出決定數據通道、記憶體、輸入和輸出應如何運作的訊號
 
-## 1.5 How to build a processor and a ram
+## 1-5 How to build a processor and a ram
 
 
 > 22/9/14
