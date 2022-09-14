@@ -6,9 +6,9 @@ collect and note by : JingShing
 
 ## Dialog目錄
 
-[1.1 介紹](#1-1Abstraction)
+[1.1 介紹](#1-1-Abstraction)
 
-[1.2 計算機架構中的八大理念](#1.2 : 8 Great ideas of Computer Architecture)
+[1.2 計算機架構中的八大理念](#1-2-8-Great-ideas-of-Computer-Architecture)
 
 1.3 你的程式之下
 
@@ -120,7 +120,7 @@ collect and note by : JingShing
   | 處理器與記憶體系統            | 決定指令可以被執行得多快                   | 第四、五及六章     |
   | 輸入∕輸出系統(硬體與作業系統) | 決定輸入∕輸出動作可能被執行得多快          | 第四、五及六章     |
 
-  ## 1.2 : 8 Great ideas of Computer Architecture
+  ## 1-2 8 Great ideas of Computer Architecture
 
 > 22/9/14
 
