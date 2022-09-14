@@ -6,7 +6,7 @@ collect and note by : JingShing
 
 ## Dialog目錄
 
-[1.1 介紹](#Computer-Architecture-notes)
+[1.1 介紹](#1-1Abstraction)
 
 1.2 計算機架構中的八大理念
 
@@ -26,7 +26,7 @@ collect and note by : JingShing
 
 1.10 謬誤與陷阱
 
-### 1-1 抽象化(Abstraction)
+### 1-1Abstraction
 
 * 計算機抽象化(Abstraction)
   * 以精要的形式來表達計算機的內涵、概念、特質、屬性或意義等，這個從計算機本身找出這個精要的形式的過程就是計算機抽象化。
