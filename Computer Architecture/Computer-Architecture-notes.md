@@ -6,7 +6,7 @@ collect and note by : JingShing
 
 ## Dialog目錄
 
-[1.1 介紹](#1-1-抽象化(abstraction))
+[1.1 介紹](#Computer-Architecture-notes)
 
 1.2 計算機架構中的八大理念
 
