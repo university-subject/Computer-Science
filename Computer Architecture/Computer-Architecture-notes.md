@@ -10,7 +10,7 @@ collect and note by : JingShing
 
 [1.2 計算機架構中的八大理念](#1-2-Eight-Great-ideas-of-Computer-Architecture)
 
-[1.3 你的程式之下](#1.3-Below-Your-Program)
+[1.3 你的程式之下](#1-3-Below-Your-Program)
 
 1.4 覆蓋之下
 
@@ -141,7 +141,7 @@ collect and note by : JingShing
 7. 記憶體的階層(hierarchy of memories)程式設計師希望記憶體要容量大、速度快且價廉
 8. 經由冗餘(redundancy)提升可靠性
 
-## 1.3 Below Your Program
+## 1-3 Below Your Program
 
 > 22/9/14
 
