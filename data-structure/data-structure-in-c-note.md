@@ -47,7 +47,7 @@ collect and note by JingShing
 
 ### Algorithm Specification
 
-* Definition: An algorithm is a finite set of instructions that accomplishes a particular task.(有限個指令的集合,可完成一項特定工作)
+* Definition: An algorithm is a finite set of instructions that accomplishes a particular task.(有限個指令的集合,可完成一項特定工作)
 * Criteria
   * Input(輸入): zero or more quantities
   * Output(輸出): at least one quantity is produced
@@ -72,9 +72,9 @@ collect and note by JingShing
 * Algorithm:
 
   ```c
-  for( i = 0; i < n ; i++ ) {    
-      Examine list [i] to list[n 1] and suppose that the    
-      smallest integer is at list [min];     
+  for( i = 0; i < n ; i++ ) {    
+      Examine list [i] to list[n 1] and suppose that the    
+      smallest integer is at list [min];     
       Interchange list[i] and list [min];
   }
   ```
@@ -138,13 +138,13 @@ void sort(int list[], int n)
 * Algorithm:
 
   ```c
-  while (there are more integers to check) {     
-      middle  =  (left  +  right)  /  2;      
-      if (searchnum < list[middle])                 
-          right  =  middle  -  1;     
-      else  if  (searchnum  ==  list[middle])                 
-          return  middle;     	
-      else  left   =  middle  +  1; 
+  while (there are more integers to check) {     
+      middle  =  (left  +  right)  /  2;      
+      if (searchnum < list[middle])                 
+          right  =  middle  -  1;     
+      else  if  (searchnum  ==  list[middle])                 
+          return  middle;     	
+      else  left   =  middle  +  1; 
   }
   ```
 
@@ -170,21 +170,21 @@ Searchnum = 43
 ### Program 1.7: Searching an ordered list
 
 ```c
-    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
-    int binsearch(int list[], int searchnum, int left, int right){   
-    /* searching list[0] <= list[1] <= … <= list[n-1] for         
-    searchnum . Return its position if found. Otherwise         
-    return  -1 */      
-    int middle;       
-    while (left <= right) {             
-        middle = (left + right)/2;            
-        switch (COMPARE(list[middle], searchnum)) {                  
-            case -1: left = middle + 1;                   
-            case 0 : return middle;                   
-            case 1 : right = middle – 1;             
-        }      
-    }        
-    return -1; 
+    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
+    int binsearch(int list[], int searchnum, int left, int right){   
+    /* searching list[0] <= list[1] <= … <= list[n-1] for         
+    searchnum . Return its position if found. Otherwise         
+    return  -1 */      
+    int middle;       
+    while (left <= right) {             
+        middle = (left + right)/2;            
+        switch (COMPARE(list[middle], searchnum)) {                  
+            case -1: left = middle + 1;                   
+            case 0 : return middle;                   
+            case 1 : right = middle – 1;             
+        }      
+    }        
+    return -1; 
 	}
 ```
 
@@ -201,7 +201,7 @@ Searchnum = 43
 ### Program 1.8:Recursive Implementation of Binary Search
 
 ```c
-int binsearch (int list[], int searchnum, int left, int right){     
+int binsearch (int list[], int searchnum, int left, int right){     
     /* search list[0]<=list[1]<=…<=list[n-1] for searchnum. Return its
            position if found. Otherwise return -1 */
        int middle;
@@ -222,28 +222,28 @@ int binsearch (int list[], int searchnum, int left, int right){
 Program 1.7: Searching an ordered list
 
 ```c
-    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
-    int binsearch(int list[], int searchnum, int left, int right){   
-    /* searching list[0] <= list[1] <= … <= list[n-1] for         
-    searchnum . Return its position if found. Otherwise         
-    return  -1 */      
-    int middle;       
-    while (left <= right) {             
-        middle = (left + right)/2;            
-        switch (COMPARE(list[middle], searchnum)) {                  
-            case -1: left = middle + 1;                   
-            case 0 : return middle;                   
-            case 1 : right = middle – 1;             
-        }      
-    }        
-    return -1; 
+    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
+    int binsearch(int list[], int searchnum, int left, int right){   
+    /* searching list[0] <= list[1] <= … <= list[n-1] for         
+    searchnum . Return its position if found. Otherwise         
+    return  -1 */      
+    int middle;       
+    while (left <= right) {             
+        middle = (left + right)/2;            
+        switch (COMPARE(list[middle], searchnum)) {                  
+            case -1: left = middle + 1;                   
+            case 0 : return middle;                   
+            case 1 : right = middle – 1;             
+        }      
+    }        
+    return -1; 
 	}
 ```
 
 Program 1.8:Recursive Implementation of Binary Search
 
 ```c
-	int binsearch (int list[], int searchnum, int left, int right){     
+	int binsearch (int list[], int searchnum, int left, int right){     
     /* search list[0]<=list[1]<=…<=list[n-1] for searchnum. Return its
            position if found. Otherwise return -1 */
        int middle;
@@ -263,7 +263,7 @@ Program 1.8:Recursive Implementation of Binary Search
 
 * Data Type(資料型態)
 
-  * A data type is a collection of **objects** and a set of **operations** that act on those objects.(**物件**的集合和可以在這些物件上**運算**的集合)
+  * A data type is a collection of **objects** and a set of **operations** that act on those objects.(**物件**的集合和可以在這些物件上**運算**的集合)
 
   * Example. 
 
@@ -338,7 +338,7 @@ Program 1.8:Recursive Implementation of Binary Search
 * Performance Analysis (machine independent)
 * Space complexity(空間複雜度): the amount of memory that it needs to run to completion (執行程式時所需的記憶體)
 * Time complexity(時間複雜度): computing time
-  Performance Measurement (machine dependent)(效率測量)
+  Performance Measurement (machine dependent)(效率測量)
 
 ## Space Complexity  :  $S(P)= c + SP(I)$**(空間複雜度)**
 
