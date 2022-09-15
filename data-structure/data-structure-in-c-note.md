@@ -97,8 +97,6 @@ collect and note by JingShing
   | 7    | 2    | 7    | 13   | 14   | 17   | 20   | 25   | 31   | 36   |
   | 8    | 2    | 7    | 13   | 14   | 17   | 20   | 25   | 31   | 36   |
 
->  22/9/15
-
 ### Program 1.4: Program of Selection Sort
 
 ```c
@@ -315,12 +313,13 @@ Program 1.8:Recursive Implementation of Binary Search
 ### Operation Specification
 
 * Operation specification 
+
   * function name
   * the types of arguments
   * the type of the results
 
 * Example:
-   for all x, y $\in$ Nat_Number; TRUE, FALSE $\in$ Boolean
+  for all x, y $\in$ Nat_Number; TRUE, FALSE $\in$ Boolean
 
   Boolean Equal(x, y)   ::=        **if** (x== y) **return** TRUE
                                                 **else return** FALSE
@@ -340,3 +339,68 @@ Program 1.8:Recursive Implementation of Binary Search
 * Space complexity(空間複雜度): the amount of memory that it needs to run to completion (執行程式時所需的記憶體)
 * Time complexity(時間複雜度): computing time
   Performance Measurement (machine dependent)(效率測量)
+
+## Space Complexity  :  $S(P)= c + SP(I)$**(空間複雜度)**
+
+* Fixed Space Requirements (*c*) (固定的空間需求)
+
+  * Independent of the characteristics of the inputs and outputs (與輸出輸入的數量大小**無關**)
+
+    * instruction space (指令空間,儲存程式碼的空間)
+
+    * space for simple variables, fixed-size structured variable, constants (簡單變數,大小固定的結構變數和常數所需的空間)
+
+* Variable Space Requirements (*S**P*(*I*)) (變動的空間需求)
+
+  * depend on the instance characteristic I
+    (與實際問題 *I* 的特性**相關**)
+
+  * values of inputs and outputs associated with I
+    (常用的特性為 *I* 的輸出與輸入數量)
+
+## Program 1.10: Simple arithmetic function
+
+* float abc(float a, float b, float c)
+  {
+   return a + b + b * c + (a + b - c) / (a + b) + 4.00;
+  }
+
+* In this program, fixed Space Requirements (*c*) = 16.
+
+  | **Type**                                              | **Name** | **Number  of bytes** |
+  | ----------------------------------------------------- | -------- | -------------------- |
+  | parameter:  float  return  address: (used internally) | a,  b, c | 4 *  3 = 12  4       |
+
+* Variable Space Requirements, $S_{abc}(I) = 0$.
+
+## Program 1.11:  Iterative function for summing a list of numbers
+
+* float sum(float list[ ], int n)
+   {
+     float tempsum = 0;
+     int i;
+     for (i = 0; i<n; i++)
+        tempsum += list [i];
+     return tempsum; 
+   }
+
+* In this program, $S_{sum}(I) = 0$
+
+  ​	因為C傳送陣列的第一個元素的位址，不會複製陣列
+
+## Program 1.12:  Recursive function for summing a list of numbers
+
+* float rsum(float list[ ], int n)
+   {
+    if (n) return rsum(list, n-1) + list[n-1];
+    return list[0];
+   }
+
+* The total variable space needed for the recursive version is $S_{rsum}(I)= 12n$. **Thus, the recursive version has a far greater overhead than its iterative counterpart.**  **(遞迴式程式較迴路式程式需要較多資源)**
+
+  | **Type**                                                     | **Name**  | **Number  of bytes** |
+  | ------------------------------------------------------------ | --------- | -------------------- |
+  | parameter:  array pointer  parameter:  integer  return  address: (used internally) | list[]  n | 4  4  4              |
+  | TOTAL  per recursive call                                    |           | 12                   |
+
+>  22/9/15
