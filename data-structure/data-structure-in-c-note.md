@@ -97,3 +97,73 @@ collect and note by JingShing
   | 8    | 2    | 7    | 13   | 14   | 17   | 20   | 25   | 31   | 36   |
 
 >  22/9/15
+
+### Program 1.4: Program of Selection Sort
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define MAX_SIZE 101
+#define SWAP(x, y, t) ((t) = (x), (x) = (y), (y) = (t))
+void sort(int [], int );  /*選擇排序*/
+void main(void){
+	int i, n;	
+	int list[MAX_SIZE];
+    printf(“Enter the number of numbers to generate: “);
+    scanf(“%d”, &n);
+    if( n < 1 || n > MAX_SIZE){
+        fprintf(stderr, “Improper value of n\n”);        
+        exit(EXIT_FAILURE);
+	}
+	for(i = 0; i < n ; i++) {  /*隨機產生數值*/
+        list[i] = rand( ) % 1000;
+ printf(“%d “,list[i]);
+ }
+void sort(int list[], int n)
+{
+   int i, j, min, temp;
+   for(i = 0; i < n ; i++)  {
+      min = i;
+      for(j = i+1 ; j < n ; j++) 
+        if(list[j] < list[min])
+          min = j;
+      SWAP(list[i],list[min],temp);
+   }
+}
+```
+
+### Example 1.2: Binary Search Is the integer searchnum in this list?
+
+* Program 1.5 Searching a sorted list
+
+* Algorithm:
+
+  ```c
+  while (there are more integers to check) {     
+      middle  =  (left  +  right)  /  2;      
+      if (searchnum < list[middle])                 
+          right  =  middle  -  1;     
+      else  if  (searchnum  ==  list[middle])                 
+          return  middle;     	
+      else  left   =  middle  +  1; 
+  }
+  ```
+
+###  An example for binary search
+
+Searchnum = 29
+
+| i    | [0]  | [1]  | [2]  | [3]  | [4]  | [5]  | [6]  | [7]  | [8]  | [9]  | [10] | [11] | [12] | [13] | [14] |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   | 56   |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   | 56   |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   | 56   |
+
+Searchnum = 43
+
+| i    | [0]  | [1]  | [2]  | [3]  | [4]  | [5]  | [6]  | [7]  | [8]  | [9]  | [10] | [11] | [12] | [13] |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
+|      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
