@@ -1,4 +1,4 @@
-collect and note by JingShing
+collected and noted by JingShing
 
 # Data Structure in C
 
