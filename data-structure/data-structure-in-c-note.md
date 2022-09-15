@@ -24,9 +24,9 @@ collect and note by JingShing
 
 * [Algorithm Specification(演算法定義)](#Algorithm-Specification)
 
-* Data Abstraction(資料抽象化)
+* [Data Abstraction(資料抽象化)](#Data-Abstraction)
 
-* Performance Analysis(效率分析)
+* [Performance Analysis(效率分析)](#Performance-Analysis)
 
 * Performance Measurement(效率測量)
 
@@ -82,6 +82,7 @@ collect and note by JingShing
   #### An example for selection sort
 
   <center>sample list
+
 
   | *i*  | [0]  | [1]  | [2]  | [3]  | [4]  | [5]  | [6]  | [7]  | [8]  |
   | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -167,3 +168,175 @@ Searchnum = 43
 |      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
 |      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
 |      | 3    | 11   | 15   | 20   | 23   | 29   | 31   | 35   | 36   | 43   | 47   | 49   | 50   | 53   |
+
+### Program 1.7: Searching an ordered list
+
+```c
+    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
+    int binsearch(int list[], int searchnum, int left, int right){   
+    /* searching list[0] <= list[1] <= … <= list[n-1] for         
+    searchnum . Return its position if found. Otherwise         
+    return  -1 */      
+    int middle;       
+    while (left <= right) {             
+        middle = (left + right)/2;            
+        switch (COMPARE(list[middle], searchnum)) {                  
+            case -1: left = middle + 1;                   
+            case 0 : return middle;                   
+            case 1 : right = middle – 1;             
+        }      
+    }        
+    return -1; 
+	}
+```
+
+### Recursive Algorithms(遞迴演算法)
+
+* We should express a recursive algorithm when the problem itself is defined recursively(當問題本身以遞迴方式定義).
+  * extremely powerful (可讓我們用定義解決問題)
+  * frequently allow us to express an otherwise complex process in very clear term (經常可讓我們用清楚的方式描述一個複雜問題)
+* Example : $\dbinom{n}{m}=\left( \frac{n!}{m!(n-m!)} \right) \quad\dbinom{n}{m}=\dbinom{n-1}{m}+\dbinom{n-1}{m-1}$
+
+* Direct recursion(直接遞迴)：functions can call themselves
+* Indirect recursion(間接遞迴)：functions may call other functions that invoke the calling function again
+
+### Program 1.8:Recursive Implementation of Binary Search
+
+```c
+int binsearch (int list[], int searchnum, int left, int right){     
+    /* search list[0]<=list[1]<=…<=list[n-1] for searchnum. Return its
+           position if found. Otherwise return -1 */
+       int middle;
+       if (left <= right) { 
+            middle = (left + right)/2;
+            switch (COMPARE(list[middle], searchnum)) {
+                case -1: return binsearch(list, searchnum, middle + 1, right);
+                case 0 : return middle;
+                case 1 : return binsearch(list, searchnum, left, middle – 1);
+         }
+    }
+    return -1;
+}
+```
+
+### Comparison of the two programs
+
+Program 1.7: Searching an ordered list
+
+```c
+    #define COMPARE(x,y) (((x) < (y)) ? -1: ((x) == (y))? 0:1)
+    int binsearch(int list[], int searchnum, int left, int right){   
+    /* searching list[0] <= list[1] <= … <= list[n-1] for         
+    searchnum . Return its position if found. Otherwise         
+    return  -1 */      
+    int middle;       
+    while (left <= right) {             
+        middle = (left + right)/2;            
+        switch (COMPARE(list[middle], searchnum)) {                  
+            case -1: left = middle + 1;                   
+            case 0 : return middle;                   
+            case 1 : right = middle – 1;             
+        }      
+    }        
+    return -1; 
+	}
+```
+
+Program 1.8:Recursive Implementation of Binary Search
+
+```c
+	int binsearch (int list[], int searchnum, int left, int right){     
+    /* search list[0]<=list[1]<=…<=list[n-1] for searchnum. Return its
+           position if found. Otherwise return -1 */
+       int middle;
+       if (left <= right) { 
+            middle = (left + right)/2;
+            switch (COMPARE(list[middle], searchnum)) {
+                case -1: return binsearch(list, searchnum, middle + 1, right);
+                case 0 : return middle;
+                case 1 : return binsearch(list, searchnum, left, middle – 1);
+         }
+    }
+    return -1;
+}
+```
+
+## Data Abstraction
+
+* Data Type(資料型態)
+
+  * A data type is a collection of **objects** and a set of **operations** that act on those objects.(**物件**的集合和可以在這些物件上**運算**的集合)
+
+  * Example. 
+
+    ​	The data type int consists of the objects {0, +1, -1, +2, -2, …, INT_MAX, INT_MIN} and the operations +, -, *, /, and %.
+
+* The data types of C
+
+  * The **basic** data types: char, int, float and double
+  * The **group** data types: array and struct
+  * The **pointer** data type
+  * The **user-defined** types
+
+* **Abstract Data Type :** An abstract data type (ADT) is a data type that is organized in such a way that the specification of the objects and the operations on the objects is separated from the representation of the objects and the implementation of the operations.
+  (一種資料型態, 它的組織方式使得**物件的規格**與物件上**可作哪些運算**，**與物件的表示法與運算的實作法是獨立的**)
+
+* We know what it does, but not necessarily how it will do it.
+
+  | **specification  of the objects** |
+  | --------------------------------- |
+  | specification  of the operations  |
+
+  ---
+
+  | **representation  of the objects** |
+  | ---------------------------------- |
+  | implementation  of the operations  |
+
+### ADT : NaturalNumber
+
+**ADT** NaturalNumber is
+   **objects**: an ordered subrange of the integers **starting at zero and ending
+           at the maximum integer (INT_MAX)** on the computer
+   **functions**:
+    for all x, y Î Nat_Number; TRUE, FALSE Î Boolean
+    and where +, -, <, and == are the usual integer operations.
+
+| **NaturalNumber** **Zero(  )**         | ::=  0                                                       |
+| -------------------------------------- | ------------------------------------------------------------ |
+| **Boolean**  **IsZero**(x)             | ::=  **if** (  x ) return FALSE       **else**  return  TRUE |
+| **Boolean**  **Equal(x, y)**           | ::=  **if** (x = = y) return TRUE     **else** return FALSE  |
+| **NaturalNumber** **Successor(x****)** | ::=  **if** (x = = INT_MAX) return x   **else** return x + 1 |
+| **NaturalNumber** **Add(x, y)**        | ::=  **if** ( x + y <= INT_MAX) return x + y   **else** return INT_MAX |
+| **NaturalNumber** **Subtract(x, y)**   | ::=  **if** ( x < y ) return 0    **else** return x－y       |
+
+**end** NaturalNumber
+
+### Operation Specification
+
+* Operation specification 
+  * function name
+  * the types of arguments
+  * the type of the results
+
+* Example:
+   for all x, y $\in$ Nat_Number; TRUE, FALSE $\in$ Boolean
+
+  Boolean Equal(x, y)   ::=        **if** (x== y) **return** TRUE
+                                                **else return** FALSE
+
+## Performance Analysis
+
+* There are many criteria upon which we judge a program, including (評估程式的標準)
+  * Meet the original specifications?
+  * Work correctly?
+  * Contain documentation?
+  * Functions work effectively?
+  * Is code readable?
+  * Efficiently use storage?
+  * Is running time acceptable?
+  * ...
+* Performance Analysis (machine independent)
+* Space complexity(空間複雜度): the amount of memory that it needs to run to completion (執行程式時所需的記憶體)
+* Time complexity(時間複雜度): computing time
+  Performance Measurement (machine dependent)(效率測量)
