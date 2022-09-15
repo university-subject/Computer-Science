@@ -1,4 +1,4 @@
-collected and noted by JingShing
+collect and note by JingShing
 
 # Data Structure in C
 
@@ -432,5 +432,49 @@ Program 1.8:Recursive Implementation of Binary Search
       (執行一次所需的程式步驟 $\times$ 次數)
     * Add up the contribution of all statements 
       (加總)
+
+## Program step - count statements
+
+## Program 1.13:Program 1.11 with count statements
+
+```
+float sum(float list[ ], int n){
+float tempsum = 0;     count++;	                /* for assignment */
+int i;
+for (i = 0; i < n; i++) {
+count++;                                            	/* for the "for" loop */
+tempsum += list[i];   count++;         	/* for assignment */
+}
+count++;                                                  	/* last execution of "for" */
+count++;                                                   	/* for return */ 
+return tempsum;  
+}
+```
+
+Count = 2n + 3(steps)
+
+```c
+tempsum = 0;
+i = 0;
+tempsum += list[0];
+i = 1;
+tempsum += list[1];
+i = 2;
+tempsum += list[2];
+i = 3;
+return tempsum;
+// if n = 3
+// count = 2*3+3 = 9
+```
+
+## Program step - Tabular method
+
+ ## Figure 1.2: Step count table for Program 1.10
+
+<center>steps/execution
+
+![tabular-sample](pictures/tabular-sample.png)
+
+
 
 >  22/9/15
