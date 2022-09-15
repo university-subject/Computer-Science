@@ -376,13 +376,13 @@ Program 1.8:Recursive Implementation of Binary Search
 ## Program 1.11:  Iterative function for summing a list of numbers
 
 * float sum(float list[ ], int n)
-   {
-     float tempsum = 0;
-     int i;
-     for (i = 0; i<n; i++)
-        tempsum += list [i];
-     return tempsum; 
-   }
+  {
+    float tempsum = 0;
+    int i;
+    for (i = 0; i<n; i++)
+       tempsum += list [i];
+    return tempsum; 
+  }
 
 * In this program, $S_{sum}(I) = 0$
 
@@ -391,10 +391,10 @@ Program 1.8:Recursive Implementation of Binary Search
 ## Program 1.12:  Recursive function for summing a list of numbers
 
 * float rsum(float list[ ], int n)
-   {
-    if (n) return rsum(list, n-1) + list[n-1];
-    return list[0];
-   }
+  {
+   if (n) return rsum(list, n-1) + list[n-1];
+   return list[0];
+  }
 
 * The total variable space needed for the recursive version is $S_{rsum}(I)= 12n$. **Thus, the recursive version has a far greater overhead than its iterative counterpart.**  **(遞迴式程式較迴路式程式需要較多資源)**
 
@@ -402,5 +402,35 @@ Program 1.8:Recursive Implementation of Binary Search
   | ------------------------------------------------------------ | --------- | -------------------- |
   | parameter:  array pointer  parameter:  integer  return  address: (used internally) | list[]  n | 4  4  4              |
   | TOTAL  per recursive call                                    |           | 12                   |
+
+## Time Complexity : $T(P)= c + T_P(I)$(時間複雜度):
+
+* **Compile time** (編譯時間) (*c*)
+  * Independent of the characteristics of the inputs and outputs 
+    (與輸出輸入的數量大小無關)
+
+  * Once the program running is verified correctly, it can run without recompilation. (一旦可正確執行, 不需重新編譯) 
+
+* **Run time** (執行時間) (*T**P*(*I*)) : **we are really concerned**
+  * *E.g.,   $ T_P(n) = c_aADD(n) + c_sSUB(n) + c_lLDA(n) + c_{st}STA(n) $
+    * ADD, SUB, LDA, STA are the number of additions, subtractions, loads and stores. (執行各運算所需次數)
+    * $c_a, c_s, c_l, c_{st}$ are constants that refer to the time needed to perform each operation. (執行各運算所需時間)
+
+
+## Time Complexity **-** program step
+
+* A **program step** (程式步驟) is a syntactically (語法) or semantically (語意) meaningful program segment whose execution time is independent of the instance characteristics.
+  (語意或語法上有意義的程式片段, 它的執行時間和輸入數目無關)
+* Example (one program step)
+  * a=2
+  * a = 2*b + 3*c /d – e + f /g/a/b/c
+* Methods to compute the number of program steps
+  (計算程式步驟數量的方法)
+  * Creating a global variable, *count.*（使用全域變數)
+  * Tabular method (表格法)
+    * Determine the total number of program steps contributed by each statement step per **execution** $\times$ **frequency** 
+      (執行一次所需的程式步驟 $\times$ 次數)
+    * Add up the contribution of all statements 
+      (加總)
 
 >  22/9/15
