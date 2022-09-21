@@ -236,11 +236,11 @@ y 軸以kbits(210bits)作為單位。DRAM 業界在過去20年來幾乎每三年
 
 ### Integrated Circuit Cost
 
-$Cost\;per\;die=\frac{Cost\;per\;die}{Dies\;per\;die\times Yield}$
+$Cost~per~die=\frac{Cost~per~die}{Dies~per~die\times Yield}$
 
-$Dies\;per\;wafer \approx \frac {Wafer\;area}{Die\;area}$
+$Dies~per~wafer \approx \frac {Wafer~area}{Die~area}$
 
-$Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
+$Yield=\frac{1}{(1+(Defects~per~area\times Die~area/2))^2}$
 
 * Nonlinear relation to area and defect rate
   * Wafer cost and area are fixed
@@ -273,11 +273,11 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 * “X is ntime faster than Y”
 
-  > $Performance_x/Performance_y=Execution\;time_y/Execution\;time_x$
+  > $Performance_x/Performance_y=Execution~time_y/Execution~time_x$
   >
   > * Example: time taken to run a program
   >   * 10s on A, 15s on B
-  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\;Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
+  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution~Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
   >     * So A is 1.5 times faster than B
 
 ### Measuring Execution Time測量運行時間
@@ -320,7 +320,7 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 ### CPU Time
 
-$CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
+$CPU~Time=CPU~Clock~Cycles\times Clock~Cycle~Time=\frac{CPU~Clock~Cycles}{Clock~Rate}$
 
 * Performance improved by 
 
@@ -350,17 +350,17 @@ $CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}
 
 * How fast must Computer B clock be?
 
-$Clock\;Rate_b=\frac{Clock\;Cycles_b}{CPU\;Time_b}=\frac{1.2\times Clcock\;Cycles_A}{6s}$
+$Clock~Rate_b=\frac{Clock~Cycles_b}{CPU~Time_b}=\frac{1.2\times Clcock~Cycles_A}{6s}$
 
-$Clock\;Cycles_A=CPU\;Time_A\times Clock\;Rate_A=10s\times2GHz=20\times10^9$
+$Clock~Cycles_A=CPU~Time_A\times Clock~Rate_A=10s\times2GHz=20\times10^9$
 
-$Clock\;Rate_B=\frac{1.2\times20\times10^9}{6s}=\frac{24\times10^9}{6s}=4GHz$
+$Clock~Rate_B=\frac{1.2\times20\times10^9}{6s}=\frac{24\times10^9}{6s}=4GHz$
 
 ### Instruction Count and CPI
 
-$Clock\;Cycles=Instruction\;Count\times Cycles\;per\;Instruction$
+$Clock~Cycles=Instruction~Count\times Cycles~per~Instruction$
 
-$CPU\;Time=Instruction\;Count\times CPI\times Clock\;Cycle\;Time=\frac{Instruction\;Count\times CPI}{Clock\;Rate}$
+$CPU~Time=Instruction~Count\times CPI\times Clock~Cycle~Time=\frac{Instruction~Count\times CPI}{Clock~Rate}$
 
 > ISA(Instruction Set Architecture；指令集架構)
 
@@ -380,14 +380,14 @@ $CPU\;Time=Instruction\;Count\times CPI\times Clock\;Cycle\;Time=\frac{Instructi
 * Same Instruction count 
 * Which is faster, and by how much?
 
-$CPU\;Time=Instruction\;Count\times CPI\times Cycle\;Time$
+$CPU~Time=Instruction~Count\times CPI\times Cycle~Time$
 
-$CPU\;Time_A=I\times 2.0\times 250ps=I\times 500ps$
+$CPU~Time_A=I\times 2.0\times 250ps=I\times 500ps$
 
-$CPU\;Time=Instruction\;Count\times CPI\times Cycle\;Time$
+$CPU~Time=Instruction~Count\times CPI\times Cycle~Time$
 
-$CPU\;Time_B=I\times 1.2\times 500ps=I\times 600ps$
+$CPU~Time_B=I\times 1.2\times 500ps=I\times 600ps$
 
-$Since~500\;is\;\le 600\;so\;A\;is\;faster\;than\;B$
+$Since~500~is~\le 600~so~A~is~faster~than~B$
 
 > 22/9/21
