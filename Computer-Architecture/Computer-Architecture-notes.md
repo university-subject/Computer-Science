@@ -444,7 +444,7 @@ $CPU ~ Time=\frac{Instruction}{Program}\times \frac{Clockcycles}{Instruction}\ti
 
 * 一個程式的效能與演算法、語言、編譯器、架構以及實際的硬 體有關
 
-  ![knowing-program-effect](Pictures/knowing-program-effect.png)
+  ![knowing-program-effect](pictures/knowing-program-effect.png)
 
   * 有些處理器每時脈週期擷取及執行多道指令
     * 有些設計者倒轉CPI 以表為IPC，或每時脈指令 數。 
