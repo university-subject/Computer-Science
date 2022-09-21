@@ -20,7 +20,7 @@ collect and note by : JingShing
 
 [1.7 功耗障壁](#1-7-The-Power-Wall)
 
-1.8 巨變：由單處理器轉移至多處理器
+[1.8 巨變：由單處理器轉移至多處理器](1-8-The-Sea-Change:-The-Swich-from-Uniprocessors-to-Multiprocessors)
 
 1.9 實例：測試Intel core i7
 
@@ -465,5 +465,31 @@ $CPU ~ Time=\frac{Instruction}{Program}\times \frac{Clockcycles}{Instruction}\ti
 * 每個電晶體所需功耗就是 
 
   $能耗 ∝ \frac12 × 電容性負載×電壓^2 × 切換頻率$
+
+### Power Trends
+
+![power-trend](pictures/power-trend.png)
+
+* In CMOS IC technology
+
+$Power=Capacitiveload\times Voltage^2\times Frequency$
+
+> $Power\Rightarrow \times30$
+>
+> $Voltage^2\Rightarrow5V\rightarrow1V$
+>
+> $Frequency\Rightarrow \times1000$
+
+###  The Power Wall 功耗障壁
+
+* 一般電壓在每個新世代中下降大約15% 
+  * 20 年來，電壓已從5V 降到1V 
+* 今日的問題是更加降低電壓將會使得電晶體漏電太多 
+  * 甚至於今天電耗中已有40% 來自於漏電 
+* 兩個理由使功耗成為積體電路設計的難題 
+  1. 功耗必須由外部引入且分送至晶片各處 
+  2. 功耗以熱的形式消散然後必須被移除
+
+## 1-8 The Sea Change: The Swich from Uniprocessors to Multiprocessors
 
 > 22/9/21
