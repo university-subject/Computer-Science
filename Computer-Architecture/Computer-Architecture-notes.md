@@ -441,7 +441,7 @@ $CPU ~ Time=\frac{Instruction}{Program}\times \frac{Clockcycles}{Instruction}\ti
 
 ### 瞭解程式效能
 
-*  一個程式的效能與演算法、語言、編譯器、架構以及實際的硬 體有關
+* 一個程式的效能與演算法、語言、編譯器、架構以及實際的硬 體有關
 
   ![knowing-program-effect](Pictures/knowing-program-effect.png)
 
@@ -490,6 +490,6 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
   1. 功耗必須由外部引入且分送至晶片各處 
   2. 功耗以熱的形式消散然後必須被移除
 
-## [1-8 The Sea Change: The Switch from Uniprocessors to Multiprocessors][#1-8]
+## <a name="1-8">1-8 The Sea Change: The Switch from Uniprocessors to Multiprocessors
 
 > 22/9/21
