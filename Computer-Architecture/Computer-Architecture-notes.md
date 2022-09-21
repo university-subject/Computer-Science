@@ -308,9 +308,14 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 ![cpu-clock-chart](pictures/cpu-clock-chart.png)
 
-* Clock period時脈週期: duration of a clock cycle時脈週期 
+* Clock period時脈週期: duration of a clock cycle時脈週期
+
+  > Clock period 和 Clock cycle 翻譯皆為時脈週期。
+
   *  e.g., $250ps = 0.25ns = 250×10^{–12}s$
+
 * Clock frequency (rate): cycles per second 
+
   * e.g., $4.0GHz = 4000MHz = 4.0×10^9Hz$
 
 ### CPU Time
