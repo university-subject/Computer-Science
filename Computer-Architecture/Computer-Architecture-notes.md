@@ -236,11 +236,11 @@ y 軸以kbits(210bits)作為單位。DRAM 業界在過去20年來幾乎每三年
 
 ### Integrated Circuit Cost
 
-$Cost\;per\;die=\frac{Cost\;per\;die}{Dies\;per\;die\times Yield}$
+$Cost\quad per\quad die=\frac{Cost\quad per\quad die}{Dies\quad per\quad die\times Yield}$
 
-$Dies\;per\;wafer \approx \frac {Wafer\;area}{Die\;area}$
+$Dies\quad per\quad wafer \approx \frac {Wafer\quad area}{Die\quad area}$
 
-$Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
+$Yield=\frac{1}{(1+(Defects\quad per\quad area\times Die\quad area/2))^2}$
 
 * Nonlinear relation to area and defect rate
   * Wafer cost and area are fixed
@@ -273,11 +273,11 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 * “X is ntime faster than Y”
 
-  > $Performance_x/Performance_y=Execution\;time_y/Execution\;time_x$
+  > $Performance_x/Performance_y=Execution\quad time_y/Execution\quad time_x$
   >
   > * Example: time taken to run a program
   >   * 10s on A, 15s on B
-  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\;Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
+  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\quad Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
   >     * So A is 1.5 times faster than B
 
 ### Measuring Execution Time
@@ -320,7 +320,7 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 ### CPU Time
 
-$CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
+$CPU\quad Time=CPU\quad Clock\quad Cycles\times Clock\quad Cycle\quad Time=\frac{CPU\quad Clock\quad Cycles}{Clock\quad Rate}$
 
 * Performance improved by 
 
