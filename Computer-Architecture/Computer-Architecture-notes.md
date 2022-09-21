@@ -236,11 +236,11 @@ y 軸以kbits(210bits)作為單位。DRAM 業界在過去20年來幾乎每三年
 
 ### Integrated Circuit Cost
 
-$Cost\quad per\quad die=\frac{Cost\quad per\quad die}{Dies\quad per\quad die\times Yield}$
+$Cost\;per\;die=\frac{Cost\;per\;die}{Dies\;per\;die\times Yield}$
 
-$Dies\quad per\quad wafer \approx \frac {Wafer\quad area}{Die\quad area}$
+$Dies\;per\;wafer \approx \frac {Wafer\;area}{Die\;area}$
 
-$Yield=\frac{1}{(1+(Defects\quad per\quad area\times Die\quad area/2))^2}$
+$Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 * Nonlinear relation to area and defect rate
   * Wafer cost and area are fixed
@@ -273,16 +273,16 @@ $Yield=\frac{1}{(1+(Defects\quad per\quad area\times Die\quad area/2))^2}$
 
 * “X is ntime faster than Y”
 
-  > $Performance_x/Performance_y=Execution\quad time_y/Execution\quad time_x$
+  > $Performance_x/Performance_y=Execution\;time_y/Execution\;time_x$
   >
   > * Example: time taken to run a program
   >   * 10s on A, 15s on B
-  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\quad Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
+  >     * Elapsed timeTotal response time, including all aspectsProcessing, I/O, OS overhead, idle timeDetermines system performanceCPU timeTime spent processing a given jobDiscounts I/O time, other jobs’ sharesComprises user CPU time and system CPU timeDifferent programs are affected differently by CPU and system performance$Execution\;Time_B/ Execution\:Time_A= 15s / 10s = 1.5$
   >     * So A is 1.5 times faster than B
 
-### Measuring Execution Time
+### Measuring Execution Time測量運行時間
 
-* Elapsed time
+* Elapsed time經過時間
   * Total response time, including all aspects
     * Processing, I/O, OS overhead, idle time
   * Determines system performance
@@ -320,7 +320,7 @@ $Yield=\frac{1}{(1+(Defects\quad per\quad area\times Die\quad area/2))^2}$
 
 ### CPU Time
 
-$CPU\quad Time=CPU\quad Clock\quad Cycles\times Clock\quad Cycle\quad Time=\frac{CPU\quad Clock\quad Cycles}{Clock\quad Rate}$
+$CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
 
 * Performance improved by 
 
@@ -335,5 +335,59 @@ $CPU\quad Time=CPU\quad Clock\quad Cycles\times Clock\quad Cycle\quad Time=\frac
   * Hardware designer must often trade off clock rate against cycle count
 
     硬體設計師應該權衡(妥協)時脈頻率和時脈週期。
+
+### CPU Time Example範例
+
+* Computer A: 2GHz clock, 10s CPU time 
+
+* Designing Computer B 
+
+  * Aim for 6s CPU time
+
+    目標6秒CPU time
+
+  * Can do faster clock, but causes 1.2 × clock cycles
+
+* How fast must Computer B clock be?
+
+$Clock\;Rate_b=\frac{Clock\;Cycles_b}{CPU\;Time_b}=\frac{1.2\times Clcock\;Cycles_A}{6s}$
+
+$Clock\;Cycles_A=CPU\;Time_A\times Clock\;Rate_A=10s\times2GHz=20\times10^9$
+
+$Clock\;Rate_B=\frac{1.2\times20\times10^9}{6s}=\frac{24\times10^9}{6s}=4GHz$
+
+### Instruction Count and CPI
+
+$Clock\;Cycles=Instruction\;Count\times Cycles\;per\;Instruction$
+
+$CPU\;Time=Instruction\;Count\times CPI\times Clock\;Cycle\;Time=\frac{Instruction\;Count\times CPI}{Clock\;Rate}$
+
+> ISA(Instruction Set Architecture；指令集架構)
+
+* Instruction Count for a program 
+  * Determined by program, ISA and compiler 
+* Average cycles per instruction 
+  * Determined by CPU hardware 
+  * If different instructions have different CPI 
+    * Average CPI affected by instruction mix
+
+### CPI Example
+
+一個程式在不同的電腦執行
+
+* Computer A: Cycle Time = 250ps, CPI = 2.0 
+* Computer B: Cycle Time = 500ps, CPI = 1.2 
+* Same Instruction count 
+* Which is faster, and by how much?
+
+$CPU\;Time=Instruction\;Count\times CPI\times Cycle\;Time$
+
+$CPU\;Time_A=I\times 2.0\times 250ps=I\times 500ps$
+
+$CPU\;Time=Instruction\;Count\times CPI\times Cycle\;Time$
+
+$CPU\;Time_B=I\times 1.2\times 500ps=I\times 600ps$
+
+$Since\;500\;is\;\le 600\;so\;A\;is\;faster\;than\;B$
 
 > 22/9/21
