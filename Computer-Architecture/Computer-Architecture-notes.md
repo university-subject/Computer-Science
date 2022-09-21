@@ -2,9 +2,11 @@
 
 collect and note by : JingShing
 
-# <details><summary>Chapter 1
+# <details><summary>Chapter 1</summary>
 
 ## Dialog目錄
+
+</details>
 
 [1.1 介紹](#1-1-Abstraction)
 
@@ -512,5 +514,3 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
     * 降低通訊與同步的額外花費(reduce communication and  synchronization overhead)
 
 > 22/9/21
-
-</details>
