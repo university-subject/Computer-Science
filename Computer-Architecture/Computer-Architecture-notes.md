@@ -2,7 +2,7 @@
 
 collect and note by : JingShing
 
-## Chapter 1
+# <details><summary>Chapter 1
 
 ## Dialog目錄
 
@@ -512,3 +512,5 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
     * 降低通訊與同步的額外花費(reduce communication and  synchronization overhead)
 
 > 22/9/21
+
+</details>
