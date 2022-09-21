@@ -20,7 +20,7 @@ collect and note by : JingShing
 
 [1.7 功耗障壁](#1-7-The-Power-Wall)
 
-[1.8 巨變：由單處理器轉移至多處理器](1-8)
+[1.8 巨變：由單處理器轉移至多處理器](#1-8)
 
 1.9 實例：測試Intel core i7
 
