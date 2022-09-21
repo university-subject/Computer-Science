@@ -153,7 +153,7 @@ collect and note by : JingShing
 
   2. 編譯器(compiler)
 
-![circle](pictures\circle.png)
+![circle](pictures/circle.png)
 
 圖1.3 以硬體為中心而應用軟體在最外的同心圓表示的簡化硬體軟體階層圖在複雜的應用情形下，也常會用到多層的應用軟體。
 
