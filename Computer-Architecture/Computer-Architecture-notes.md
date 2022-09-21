@@ -293,3 +293,30 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
   * Different programs are affected differently by CPU and system performance
 
 > 22/9/14
+
+> 
+
+### CPU Clocking
+
+> $m\rightarrow -3$ $\quad k\rightarrow 3$
+>
+> $\mu\rightarrow -6$$\quad M\rightarrow 6$
+>
+> $n\rightarrow -9$$\quad G\rightarrow 9$
+>
+> $p\rightarrow -12$$\quad T\rightarrow 12$
+
+* Operation of digital hardware governed by a constantrate clock
+
+![cpu-clock-chart](pictures/cpu-clock-chart.png)
+
+* Clock period: duration of a clock cycle 
+  *  e.g., 250ps = 0.25ns = 250×10–12s 
+* Clock frequency (rate): cycles per second 
+  * e.g., 4.0GHz = 4000MHz = 4.0×109Hz 3
+
+### CPU Time
+
+$CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
+
+> 22/9/21
