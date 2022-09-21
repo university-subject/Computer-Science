@@ -18,7 +18,7 @@ collect and note by : JingShing
 
 [1.6 效能](#1-6-Performance)
 
-1.7 功耗障壁
+[1.7 功耗障壁](#1-7-The-Power-Wall)
 
 1.8 巨變：由單處理器轉移至多處理器
 
@@ -389,5 +389,81 @@ $CPU ~ Time=Instruction ~ Count\times CPI\times Cycle ~ Time$
 $CPU ~ Time_B=I\times 1.2\times 500ps=I\times 600ps$
 
 $Since ~ 500 ~ is ~ \le 600 ~ so ~ A ~ is ~ faster ~ than ~ B$
+
+$\frac{CPU ~ Time_B}{CPU ~ Time_A}=\frac{I\times 600ps}{I\times 500ps}=1.2$
+
+$By ~ 1.2 ~ times ~ faster$
+
+### CPI in More Detail
+
+* If different instruction classes take different numbers  of cycles
+
+$Clock ~ Cycles=\sum_{i=1}^{n}(CPI_i\times ~ Instruction ~ Counts_i)$
+
+* Weighted average CPI
+
+$CPI=\frac{Clock ~ Cycles}{Instruction ~ Count}=\sum_{i=1}^{n}(CPI_i\times\frac{Instruction ~ Count_i}{Instruction ~ Count})$
+
+$\frac{Instruction ~ Count_i}{Instruction ~ Count}\Rightarrow Relative frequency$
+
+### CPI Example
+
+相同程式用不同編譯器，在相同電腦執行
+
+* Alternative compiled code sequences using  instructions in classes A, B, C
+
+  *  IC :Instruction count
+
+  | Class             | A    | B    | C    |
+  | ----------------- | ---- | ---- | ---- |
+  | CPI  for class    | 1    | 2    | 3    |
+  | IC  in sequence 1 | 2    | 1    | 2    |
+  | IC  in sequence 2 | 4    | 1    | 1    |
+
+  * Sequence 1: IC = 5 
+    * Clock Cycles = 2×1 + 1×2 + 2×3 = 10 
+    * Avg. CPI = 10/5 = 2.0
+  * Sequence 2: IC = 6 
+    * Clock Cycles = 4×1 + 1×2 + 1×3 = 9 
+    * Avg. CPI = 9/6 = 1.5
+
+### Performance Summary
+
+#### The BIG Picture
+
+$CPU ~ Time=\frac{Instruction}{Program}\times \frac{Clockcycles}{Instruction}\times\frac{Seconds}{Clock ~ Cycle}$
+
+* Performance depends on 
+  * Algorithm: affects IC, possibly CPI 
+  * Programming language: affects IC, CPI 
+  * Compiler: affects IC, CPI 
+  * Instruction set architecture: affects IC, CPI, Tc
+
+### 瞭解程式效能
+
+*  一個程式的效能與演算法、語言、編譯器、架構以及實際的硬 體有關
+
+  ![knowing-program-effect](Pictures/knowing-program-effect.png)
+
+  * 有些處理器每時脈週期擷取及執行多道指令
+    * 有些設計者倒轉CPI 以表為IPC，或每時脈指令 數。 
+    * 若某處理器平均每時脈執行二道指令，則其具 有IPC=2 亦即CPI=0.5 
+  * 為了省能或是短暫地加強效能，現在的許多處理 器可以變化它們的時脈速率，因此我們對一個程 式會需要知道其平均的時脈速率
+
+## 1-7 The Power Wall
+
+* 功耗形成了冷卻能力的最低要求 
+
+* 對能源而言焦耳這個能量單位比譬如瓦數的耗能率更為恰當 
+
+  * 所消耗的電能，稱為電功率，其單位為瓦特（watt，簡寫為W），簡 稱瓦。 ◎如果有1安培的電流通過1伏特的電位差，則每秒內所獲得或 消耗的能量為1焦耳，或者說電功率為1瓦特，即「1瓦特＝1焦耳 ∕ 秒」 ，或「1W＝1J ∕ s」。 
+
+* 每個電晶體 0/1 轉換一次的動態能耗是 
+
+  $能耗 ∝ \frac12 × 電容性負載×電壓^2$
+
+* 每個電晶體所需功耗就是 
+
+  $能耗 ∝ \frac12 × 電容性負載×電壓^2 × 切換頻率$
 
 > 22/9/21
