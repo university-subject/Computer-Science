@@ -320,7 +320,7 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 
 ### CPU Time
 
-$CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
+$CPU\;Time=CPU \; Clock \; Cycles \times Clock \; Cycle \; Time=\frac{CPU \; Clock \; Cycles}{Clock \; Rate}$
 
 * Performance improved by 
 
