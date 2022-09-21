@@ -323,8 +323,17 @@ $Yield=\frac{1}{(1+(Defects\;per\;area\times Die\;area/2))^2}$
 $CPU\;Time=CPU\;Clock\;Cycles\times Clock\;Cycle\;Time=\frac{CPU\;Clock\;Cycles}{Clock\;Rate}$
 
 * Performance improved by 
+
   * Reducing number of clock cycles 
-  * Increasing clock rate 
-  * Hardware designer must often trade off clock rate  against cycle count
+
+    減少時脈周期的數量
+
+  * Increasing clock rate
+
+    增加時脈頻率/時脈速率
+
+  * Hardware designer must often trade off clock rate against cycle count
+
+    硬體設計師應該權衡(妥協)時脈頻率和時脈週期。
 
 > 22/9/21
