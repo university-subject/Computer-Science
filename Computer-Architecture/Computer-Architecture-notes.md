@@ -309,7 +309,7 @@ $Yield=\frac{1}{(1+(Defects ~ per ~ area\times Die ~ area/2))^2}$
 
 ![cpu-clock-chart](pictures/cpu-clock-chart.png)
 
-* Clock period時脈週期: duration of a clock cycle時脈週期
+* Clock period(時脈週期)的長度: duration of a clock cycle(時脈週期)
 
   > Clock period 和 Clock cycle 翻譯皆為時脈週期。
 
