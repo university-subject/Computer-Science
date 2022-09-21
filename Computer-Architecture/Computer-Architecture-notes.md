@@ -499,7 +499,7 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
   * 其所帶來在處理量上的好處更甚於反應時間，稱 處理器為內核 
   * 稱這種微處理器為多核微處理器
 
-![1-17](pictures\1-17.png)
+![1-17](pictures/1-17.png)
 
 圖1.17 自1980 年代中期以來的處理器效能增進情形
 
