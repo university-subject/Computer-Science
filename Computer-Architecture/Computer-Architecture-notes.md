@@ -388,6 +388,6 @@ $CPU\;Time=Instruction\;Count\times CPI\times Cycle\;Time$
 
 $CPU\;Time_B=I\times 1.2\times 500ps=I\times 600ps$
 
-$Since\;500\;is\;\le 600\;so\;A\;is\;faster\;than\;B$
+$Since~500\;is\;\le 600\;so\;A\;is\;faster\;than\;B$
 
 > 22/9/21
