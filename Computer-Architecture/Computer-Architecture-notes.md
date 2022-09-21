@@ -490,6 +490,6 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
   1. 功耗必須由外部引入且分送至晶片各處 
   2. 功耗以熱的形式消散然後必須被移除
 
-## [1-8 The Sea Change: The Switch from Uniprocessors to Multiprocessors][1-8]
+## [1-8 The Sea Change: The Switch from Uniprocessors to Multiprocessors][#1-8]
 
 > 22/9/21
