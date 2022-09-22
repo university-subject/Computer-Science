@@ -515,3 +515,122 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
 > 22/9/21
 
 </details>
+ 
+<details><summary><h2>Chapter 1</h2></summary>
+ ## 補充教材 Instruction-Set Architecture(ISA)
+### The Stored Memory Computer
+>程式跟結果都存在記憶體裡面
+
+![](https://i.imgur.com/SWxwVwW.png)
+• Datapath (channels/changes bits)
+• Control (directs operations)
+• Memory (places to keep bits)
+• Input (get data from outside)
+• Output (send data to outside
+
+### Steps in Executing an Instruction
+
+1. **Instruction Fetch**: Fetch the next instruction from memory
+2. **Instruction Decode**: Examine instruction to determine:
+    * What operation is performed by the instruction (e.g., addition)
+    * What operands are required, and where the result goes
+    > ADD A,B,C: A<-B+C operation(+) operands(A,B,C)
+3. **Operand Fetch**: Fetch the operands
+4. **Execution**: Perform the operation on the operands
+5. **Result Writeback**: Write the result to the specified location
+6. **Next Instruction**: Determine where to get next instruction
+
+### What is Specified in an ISA?
+
+* **Instruction Decode**: How are operations and 
+operands specified?
+* **Operand Fetch**: Where can operands be located? 
+How many?
+* **Execution**: What operations can be performed? What data types and sizes?
+* **Result Writeback**: Where can results be written? How 
+many?
+* **Next Instruction**: How can we choose the next instruction?
+
+### A Simple ISA: Memory-Memory
+* What operation can be performed? **Basic arithmetic (for now)**
+* What data types and sizes? **32-bit integers**
+* Where can operands and results be located? **Memory**
+* How many operands and results ? **2 operands, 1 result**
+* How are operations and operands specified? **OP DEST, SRC1, SRC2**
+  >opcode destination,source1,source2
+* How can we choose the next instruction? **Next in sequence**
+### 例題:
+---
+![](https://i.imgur.com/5fdeQOU.png)
+
+---
+![](https://i.imgur.com/hrt7vG2.png)
+
+---
+
+### Simple Code Translation
+> A = (B + C) * (D + E);
+> Assume we put A in 100, B in 48, C in 76, D in20,and E in 32.
+> ADD M[100], M[48], M[76] # A = B + C
+> ADD M[84], M[20], M[32] # temp = D + E
+> MUL M[100], M[100], M[84] # A = A * temp
+
+### Problems with Memory-Memory ISAs
+* Main memory much slower than arithmetic circuits
+* It takes a lot of room to specify memory addresses
+    >(ex:上面例題二)指令格式需要54bits
+* Results are often used one or two instructions later
+    >(ex:上面例題)第一步先存到A，第三步又要拿出來用。
+
+#### make the common case fast!
+>Solution: store temporary or intermediate results in fast memories(暫存器) **near** the arithmetic units.
+
+### Accumulator(累加) Machines
+>An “accumulator” machine keeps a single high-speed buffer(e.g., a set of D latches or 
+>flip-flops,one for each data bit) near the arithmetic logic.
+
+only one operand can be specified; 
+the accumulator is implicit: “OP operand” means:
+* acc. = acc. OPcode operand
+    >所以同樣在例題二裡，acc的指令格式只需要(6+16)個bits
+
+Example: 
+LOAD M[48] # Load B into acc.
+ADD M[76] # Add C to acc. (now has B+C)
+STORE M[100] # Write acc. To A
+
+### Shortcomings(缺點) of Accumulator Machines
+
+* Still requires storing lots of temporary and intermediate values in memory.
+* Accumulator only really beneficial for a chain (sequence) of calculations where the result of one is the input to the next.
+
+### Alternatives to Accumulator Machines
+>If more **hardware resources** are available, put more fast storage locations alongside the accumulator:
+
+* Stack machines
+* Register machines
+    * Special purpose
+    * General purpose
+
+### Stack machines
+>Idea: A pile of fast storage locations with a top and a bottom.
+
+![](https://i.imgur.com/0bxZCRB.png)
+>An instruction **can only get at the top value, or maybe the top two or three values**. We can put new values on the top (“***push***”) or take them off the top (“***pop***”) but that’s it. We can’t get to locations underneath the top unless we remove everything above.
+
+### Stack Machine ISA
+#### Basic operations include:
+* **Load**: get value from memory and push onto stack
+* **Store**: pop value off of stack and put into memory
+* **Arithmetic**: pop 1 or 2 values off of stack; push result on stack
+* **Dup**: Get value at top of stack without removing; push new copy onto stack 
+    > (why is this useful?) ex:複製頂層值再放入頂端，把兩個值相減可把頂端清0。
+
+### Stack Machine Does A=(B+C)*(D+E)
+![](https://i.imgur.com/YvvVHYU.png)
+
+---
+![](https://i.imgur.com/rWqZbY8.png)
+
+---
+</details>
