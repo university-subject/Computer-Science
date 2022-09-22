@@ -517,6 +517,7 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
 </details>
  
 <details><summary><h2>Chapter 2</h2></summary>
+ 
 ## 補充教材 Instruction-Set Architecture(ISA)
 ### The Stored Memory Computer
 >程式跟結果都存在記憶體裡面
@@ -633,4 +634,6 @@ STORE M[100] # Write acc. To A
 ![](https://i.imgur.com/rWqZbY8.png)
 
 ---
+ 
+ > 22/9/21
 </details>
