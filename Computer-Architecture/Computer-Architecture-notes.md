@@ -523,11 +523,11 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
 >程式跟結果都存在記憶體裡面
 
 ![](https://i.imgur.com/SWxwVwW.png)
-• Datapath (channels/changes bits)
-• Control (directs operations)
-• Memory (places to keep bits)
-• Input (get data from outside)
-• Output (send data to outside
+* Datapath (channels/changes bits)
+* Control (directs operations)
+* Memory (places to keep bits)
+* Input (get data from outside)
+* Output (send data to outside
 
 ### Steps in Executing an Instruction
 
