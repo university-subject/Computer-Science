@@ -27,3 +27,20 @@ collected & noted by JingShing
 ### 小型積體電路 SSI
 
 #### 設計一個 2 對 4 高態動作的解碼器
+
+```VHDL
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity dmuxto16 is
+	Port (Din:in std_logic_vector(3 downto 0);
+			S:in std_logic_vector(15 downto 0)
+	);
+end dmuxto16;
+
+architecture dmuxto16 of dmuxto16 is
+	signal P:std_logic_vector(3 downto 0)
+begin
+	
+end dmuxto16;
+```
