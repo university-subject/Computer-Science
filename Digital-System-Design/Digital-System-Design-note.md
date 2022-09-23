@@ -42,6 +42,9 @@ end dmuxto16;
 architecture dmuxto16 of dmuxto16 is
 	signal P:std_logic_vector(3 downto 0)
 begin
-	P(0) <= Din when S(3 downto 2) = "00"
+	P(0) <= Din when S(3 downto 2) = "00" else
+	P(1) <= Din when S(3 downto 2) = "01" else
+	P(2) <= Din when S(3 downto 2) = "10" else
+	P(3) <= Din when S(3 downto 2) = "11" else
 end dmuxto16;
 ```
