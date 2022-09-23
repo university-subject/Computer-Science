@@ -33,14 +33,15 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity dmuxto16 is
-	Port (Din:in std_logic_vector(3 downto 0);
-			S:in std_logic_vector(15 downto 0)
+	Port (Din:in std_logic;
+			S:in std_logic_vector(3 downto 0);
+			F:out std_logic_vector(15 downto 0)
 	);
 end dmuxto16;
 
 architecture dmuxto16 of dmuxto16 is
 	signal P:std_logic_vector(3 downto 0)
 begin
-	
+	P(0) <= Din when S(3 downto 2) = "00"
 end dmuxto16;
 ```
