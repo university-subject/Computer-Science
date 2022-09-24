@@ -4,7 +4,6 @@ collect and note by : JingShing
 
 <details><summary><h2>Chapter 1</h2></summary>
 
-
 ## Dialog目錄
 
 [1.1 介紹](#1-1-Abstraction)
@@ -23,9 +22,9 @@ collect and note by : JingShing
 
 [1.8 巨變：由單處理器轉移至多處理器](#1-8)
 
-1.9 實例：測試Intel core i7
+[1.9 實例：測試Intel core i7](#1-9)
 
-1.10 謬誤與陷阱
+[1.10 謬誤與陷阱](
 
 ## 1-1 Abstraction
 
@@ -511,6 +510,93 @@ $Power=Capacitiveload\times Voltage^2\times Frequency$
   * 第二個理由是程式師必須分割一個應用以使每個 處理器同時可以擁有大約相同的工作量，以及排 程和協調所造成的額外花費不致於抵銷掉平行性 帶來的潛在效能好處 
     * 均勻地平衡負載(balance the load) 
     * 降低通訊與同步的額外花費(reduce communication and  synchronization overhead)
+
+<a name="1-9">1.9 實例：測試Intel Core i7 SPEC 中央處理器測試程式
+
+* 大多數使用者依賴已知方法來測量受測計算機的效 能，並期待該方法足以反映某一計算機對他們的工 作負載表現有多好 
+  * 通常是以一組測試程式(benchmarks)── 特別挑選 來量測效能的程式──來評量計算機 
+  * 測試程式集組成一個使用者希望足以預測真實工 作負載效能表現的工作負載
+
+### SPEC 中央處理器測試程式
+
+* SPEC(系統效能評估組織，System Performance  Evaluation Cooperative)是許多計算機業者為了創造 現代計算機系統各種標準測試程式集而建立及支持 的組織 
+
+  * 1989 年SPEC 首次提出SPEC89 
+  * 最新的一代稱為SPEC CPU2006 
+    * 包含了一組12 個的整數測試程式(CINT2006)以及17 個 的浮點測試程式(CFP2006)
+
+* SPEC CPU2006  Elapsed time to execute a selection of programs 
+
+  * Negligible(微不足道) I/O, so focuses on CPU performance 
+
+* Normalize relative to reference machine 
+
+  * SPECratio 
+
+    
+
+* Summarize as geometric mean of performance ratios 
+
+  * CINT2006 (integer) and CFP2006 (floating-point)
+
+![excution_time_ratio](pictures/excution_time_ratio.png)
+
+### CINT2006 for Intel Core i7 920
+
+![i7-920](pictures/i7-920.png)
+
+### SPEC 功耗測試程式
+
+* SPEC 測試功耗的程式 
+* SPECpower 測出伺服器在一段時間裡以10% 為區間 的負載情況下的功耗 
+  * 為了簡化計算機的市場宣傳，SPEC 將這些數字整理成一 個單一數字，稱為 Overall ssj_ops per watt 
+  * SPECpower_ssj2008 is basically a measure of ssj_ops/watt  (server side Java operations per second per watt) 
+  * Performance: ssj_ops/sec 
+  * Power: Watts (Joules/sec)
+
+![ssj_opsper](pictures/ssj_opsper.png)
+
+### SPECpower_ssj2008 for Xeon X5650
+
+![Xeon-X5650](pictures/Xeon-X5650.png)
+
+## <a name="1-10">1.10 謬誤(fallacies)與陷阱(pitfalls)
+
+* 陷阱：期望計算機某一方面的改善可以提昇整體效 能到等同於該改善的幅度 
+
+  * Amdahl’s 定律 
+
+    $改善後的執行時間=\frac{受改善影響的執行時間}{改善的幅度}+不受影響的執行時間$
+
+* 回收遞降定律(The law of diminishing returns)
+
+* 謬誤：低利用率的計算機幾乎不耗電 
+
+* 謬誤：為了效能而設計以及為了能量效益而設計是 不相關的目標 
+
+* 陷阱：使用效能計算式的一部分作為效能衡量標準 
+
+  * MIPS (百萬指令每秒，million instructions per  second)
+
+    $MIPS=\frac{指令數}{執行時間\times 10^6}$
+
+  * MIPS 的好處是其易懂，較快的計算機有較大的 MIPS，符合直覺
+
+### Pitfall: MIPS as a Performance Metric
+
+* MIPS: Millions of Instructions Per Second 
+  * Doesn’t account for 
+    * Differences in ISAs between computers 
+    * Differences in complexity between instructions
+
+![mips_math](pictures/mips_math.png)
+
+* CPI varies between programs on a given CPU
+
+* 有三個問題： 
+  1. MIPS說明指令執行速率然而未考慮指令的能力 
+  2. 即使在同一計算機上，MIPS 也隨程式而異 
+  3. 程式可改寫成執行更多指令，然而各指令執 行得更快！
 
 > 22/9/21
 
