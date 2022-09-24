@@ -24,7 +24,7 @@ collect and note by : JingShing
 
 [1.9 實例：測試Intel core i7](#1-9)
 
-[1.10 謬誤與陷阱](
+[1.10 謬誤與陷阱](#
 
 ## 1-1 Abstraction
 
