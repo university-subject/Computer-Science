@@ -480,6 +480,6 @@ return tempsum;
 >  22/9/15
 
 Big O
-> $存在c, n_0 > 0,當n\geq n_0$
+* $存在c, n_0 > 0,當n\geq n_0, f(n)\leq cg(n)$
 
 >  22/9/22
